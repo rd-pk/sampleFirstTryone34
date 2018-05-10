@@ -1,0 +1,8 @@
+---
+instances: 1
+memory: 512M
+applications:
+- name: product-service
+  path: target/product-service.jar
+# command: java -jar product-service.jar $PWD/config.yml
+  command: echo "Starting product-service application." && $PWD/.java-buildpack/open_jdk_jre/bin/java -cp $PWD/*:. $JAVA_OPTS -Djava.io.tmpdir=$TMPDIR com.prokarma.ProductService server $PWD/config.yml

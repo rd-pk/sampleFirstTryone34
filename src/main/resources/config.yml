@@ -1,0 +1,28 @@
+server:
+  applicationConnectors:
+  - type: http
+    port: 0
+  adminConnectors:
+  - type: http
+    port: 0
+
+consul:
+  endpoint: localhost:8500
+
+zipkin:
+  enabled: true
+  collector: http
+  baseUrl: http://localhost:3081/
+ 
+
+zipkinClient:
+  serviceName: product-service
+  timeout: 2s
+
+
+
+
+logging:
+  level: INFO
+  loggers:
+    com.prokarma: DEBUG
